@@ -44,7 +44,28 @@ class _CageScreenState extends State<CageScreen> {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
             ),
             8.0.spaceY,
-            SearchTextField(controller: _controller, title: 'Cari')
+            Row(
+              children: [
+                Expanded(child: SearchTextField(controller: _controller)),
+                8.0.spaceX,
+                Container(
+                  width: 128,
+                  height: 32,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(),
+                    borderRadius: BorderRadius.circular(96),
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),
