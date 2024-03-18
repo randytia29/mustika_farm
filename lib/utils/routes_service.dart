@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import 'package:go_router/go_router.dart';
+import 'package:mustika_farm/features/cage/presentation/screen/cage_screen.dart';
 
 import '../features/home/presentation/screen/home_screen.dart';
 
@@ -21,13 +22,19 @@ class RoutesService {
       );
 
   static GoRouter goRouter = GoRouter(
-    initialLocation: '/home',
+    initialLocation: '/cage',
     routes: [
       GoRoute(
         path: '/home',
         name: 'home',
         pageBuilder: (context, state) =>
             _buildPageWithDefaultTransition(child: const HomeScreen()),
+      ),
+      GoRoute(
+        path: '/cage',
+        name: 'cage',
+        pageBuilder: (context, state) =>
+            _buildPageWithDefaultTransition(child: const CageScreen()),
       )
     ],
   );
