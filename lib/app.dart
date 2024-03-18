@@ -26,7 +26,7 @@ class MainApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
-        title: 'Reqres',
+        title: 'Mustika Farm',
         theme: getApplicationThemeData(context),
         routerConfig: RoutesService.goRouter,
       ),

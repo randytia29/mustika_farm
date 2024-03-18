@@ -26,3 +26,19 @@ flutter:
   uses-material-design: true
   assets:
     - .env
+
+  fonts:
+    - family: AirbnbCereal
+      fonts:
+        - asset: fonts/AirbnbCerealBlack.ttf
+          weight: 900
+        - asset: fonts/AirbnbCerealBold.ttf
+          weight: 700
+        - asset: fonts/AirbnbCerealBook.ttf
+          weight: 400
+        - asset: fonts/AirbnbCerealExtraBold.ttf
+          weight: 800
+        - asset: fonts/AirbnbCerealLight.ttf
+          weight: 300
+        - asset: fonts/AirbnbCerealMedium.ttf
+          weight: 500

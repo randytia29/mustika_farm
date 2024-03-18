@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mustika_farm/features/cage/presentation/cubit/active_cage_cubit.dart';
 import 'package:mustika_farm/features/cage/presentation/cubit/rest_cage_cubit.dart';
+import 'package:mustika_farm/features/cage/presentation/widget/search_text_field.dart';
+import 'package:mustika_farm/theme_manager/space_manager.dart';
 
 class CageScreen extends StatefulWidget {
   const CageScreen({
@@ -13,17 +15,39 @@ class CageScreen extends StatefulWidget {
 }
 
 class _CageScreenState extends State<CageScreen> {
+  late TextEditingController _controller;
+
   @override
   void initState() {
     super.initState();
     context.read<ActiveCageCubit>().fetchActiveCage();
     context.read<RestCageCubit>().fetchRestCage();
+
+    _controller = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('kandang')),
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const Text(
+              'Kandang',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+            ),
+            8.0.spaceY,
+            SearchTextField(controller: _controller, title: 'Cari')
+          ],
+        ),
+      ),
 
       // body: BlocBuilder<UserCubit, UserState>(
       //   builder: (context, userState) {
