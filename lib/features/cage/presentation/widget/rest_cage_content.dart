@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mustika_farm/features/cage/presentation/cubit/active_cage_cubit.dart';
+import 'package:mustika_farm/features/cage/presentation/cubit/rest_cage_cubit.dart';
 import 'package:mustika_farm/theme_manager/space_manager.dart';
 
 import '../../../../theme_manager/asset_manager.dart';
 import 'cage_card.dart';
 
-class ActiveCageContent extends StatelessWidget {
-  const ActiveCageContent({
+class RestCageContent extends StatelessWidget {
+  const RestCageContent({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ActiveCageCubit, ActiveCageState>(
-      builder: (context, activeCageState) {
-        if (activeCageState is ActiveCageLoading) {
+    return BlocBuilder<RestCageCubit, RestCageState>(
+      builder: (context, restCageState) {
+        if (restCageState is RestCageLoading) {
           return const Center(child: CircularProgressIndicator());
         }
 
-        if (activeCageState is ActiveCageFailed) {
-          return Text(activeCageState.message);
+        if (restCageState is RestCageFailed) {
+          return Text(restCageState.message);
         }
 
-        if (activeCageState is ActiveCageLoaded) {
-          final cages = activeCageState.cages;
+        if (restCageState is RestCageLoaded) {
+          final cages = restCageState.cages;
 
           return Expanded(
             child: Column(
@@ -47,7 +47,7 @@ class ActiveCageContent extends StatelessWidget {
                         style: TextStyle(fontSize: 12),
                       ),
                       Text(
-                        '${cages.length} kandang aktif.',
+                        '${cages.length} kandang rehat.',
                         style: const TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w700,
@@ -66,8 +66,8 @@ class ActiveCageContent extends StatelessWidget {
 
                       return CageCard(
                         cage: cage,
-                        image: AssetManager.farm,
-                        colorHead: const Color(0xFF85C226),
+                        image: AssetManager.restFarm,
+                        colorHead: const Color(0xFF555555),
                       );
                     },
                     separatorBuilder: (BuildContext context, int index) =>

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mustika_farm/features/cage/presentation/cubit/active_cage_cubit.dart';
 import 'package:mustika_farm/features/cage/presentation/cubit/rest_cage_cubit.dart';
+import 'package:mustika_farm/features/cage/presentation/widget/rest_cage_content.dart';
 import 'package:mustika_farm/features/cage/presentation/widget/search_text_field.dart';
 import 'package:mustika_farm/theme_manager/space_manager.dart';
 
@@ -70,7 +71,8 @@ class _CageScreenState extends State<CageScreen> {
               ],
             ),
             23.0.spaceY,
-            const ActiveCageContent()
+            // const ActiveCageContent(),
+            const RestCageContent()
           ],
         ),
       ),
