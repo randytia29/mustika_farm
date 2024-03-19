@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mustika_farm/features/cage/presentation/cubit/active_cage_cubit.dart';
 import 'package:mustika_farm/features/cage/presentation/cubit/rest_cage_cubit.dart';
+import 'package:mustika_farm/features/cage/presentation/widget/rest_cage_content.dart';
 import 'package:mustika_farm/features/cage/presentation/widget/search_text_field.dart';
 import 'package:mustika_farm/theme_manager/space_manager.dart';
 
@@ -18,6 +19,8 @@ class CageScreen extends StatefulWidget {
 
 class _CageScreenState extends State<CageScreen> {
   late TextEditingController _controller;
+
+  int index = 0;
 
   @override
   void initState() {
@@ -68,7 +71,7 @@ class _CageScreenState extends State<CageScreen> {
                   8.0.spaceX,
                   Container(
                     width: 128,
-                    height: 32,
+                    height: 35,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(),
@@ -76,8 +79,43 @@ class _CageScreenState extends State<CageScreen> {
                     ),
                     child: Row(
                       children: [
-                        Container(
-                          decoration: const BoxDecoration(),
+                        Expanded(
+                          child: InkWell(
+                            onTap: () => setState(() => index = 0),
+                            child: Container(
+                              height: 35,
+                              alignment: Alignment.center,
+                              decoration: index == 0
+                                  ? BoxDecoration(
+                                      color: const Color(0xFF1B6858),
+                                      borderRadius: BorderRadius.circular(96),
+                                    )
+                                  : null,
+                              child: const Text(
+                                'Aktif',
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: InkWell(
+                            onTap: () => setState(() => index = 1),
+                            child: Container(
+                              height: 35,
+                              alignment: Alignment.center,
+                              decoration: index == 1
+                                  ? BoxDecoration(
+                                      color: const Color(0xFF1B6858),
+                                      borderRadius: BorderRadius.circular(96),
+                                    )
+                                  : null,
+                              child: const Text(
+                                'Rehat',
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ),
                         )
                       ],
                     ),
@@ -86,8 +124,7 @@ class _CageScreenState extends State<CageScreen> {
               ),
             ),
             23.0.spaceY,
-            const ActiveCageContent(),
-            // const RestCageContent()
+            index == 0 ? const ActiveCageContent() : const RestCageContent(),
           ],
         ),
       ),

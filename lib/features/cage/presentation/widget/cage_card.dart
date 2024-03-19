@@ -66,7 +66,9 @@ class CageCard extends StatelessWidget {
                           alignment: Alignment.center,
                           margin: const EdgeInsets.all(2),
                           decoration: BoxDecoration(
-                            color: colorHead,
+                            color: cage.jenisPeternak == 'PLASMA'
+                                ? const Color(0xFF1B6858)
+                                : colorHead,
                             borderRadius: BorderRadius.circular(24),
                           ),
                           child: Text(
