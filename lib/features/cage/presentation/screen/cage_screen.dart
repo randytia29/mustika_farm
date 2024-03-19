@@ -5,6 +5,8 @@ import 'package:mustika_farm/features/cage/presentation/cubit/rest_cage_cubit.da
 import 'package:mustika_farm/features/cage/presentation/widget/search_text_field.dart';
 import 'package:mustika_farm/theme_manager/space_manager.dart';
 
+import '../widget/active_cage_content.dart';
+
 class CageScreen extends StatefulWidget {
   const CageScreen({
     super.key,
@@ -39,11 +41,12 @@ class _CageScreenState extends State<CageScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            20.0.spaceY,
             const Text(
               'Kandang',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
             ),
-            8.0.spaceY,
+            10.0.spaceY,
             Row(
               children: [
                 Expanded(child: SearchTextField(controller: _controller)),
@@ -59,13 +62,15 @@ class _CageScreenState extends State<CageScreen> {
                   child: Row(
                     children: [
                       Container(
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                       )
                     ],
                   ),
                 )
               ],
-            )
+            ),
+            23.0.spaceY,
+            const ActiveCageContent()
           ],
         ),
       ),

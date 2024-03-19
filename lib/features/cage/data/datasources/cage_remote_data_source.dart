@@ -23,8 +23,7 @@ class CageRemoteDataSourceImpl implements CageRemoteDataSource {
     final data = jsonDecode(response.body);
 
     if (response.statusCode == 200) {
-      final cages =
-          List.from(data['data']).map((e) => CageModel.fromJson(e)).toList();
+      final cages = List.from(data).map((e) => CageModel.fromJson(e)).toList();
 
       return cages;
     } else {

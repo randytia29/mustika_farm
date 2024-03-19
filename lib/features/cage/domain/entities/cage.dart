@@ -4,7 +4,7 @@ class Cage extends Equatable {
   final String? namaKandang;
   final String? alamatKandang;
   final bool? statusAktif;
-  final dynamic clientName;
+  final String? clientName;
   final String? jenisPeternak;
   final String? periode;
   final String? umur;
