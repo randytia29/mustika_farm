@@ -16,13 +16,11 @@ class SearchTextField extends StatelessWidget {
         TextFormField(
           controller: _controller,
           decoration: const InputDecoration(
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 12,
-            ),
+            contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 9),
             fillColor: Colors.white,
             filled: true,
             hintText: 'Cari',
-            hintStyle: TextStyle(color: Color(0xFFBBBBBB)),
+            hintStyle: TextStyle(color: Color(0xFFBBBBBB), fontSize: 13),
             suffixIcon: Icon(Icons.search),
             suffixIconColor: Color(0xFFBBBBBB),
             border: OutlineInputBorder(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mustika_farm/theme_manager/asset_manager.dart';
 import 'package:mustika_farm/theme_manager/space_manager.dart';
 
 import '../../domain/entities/cage.dart';
@@ -40,10 +41,7 @@ class MainInfoCage extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              const Icon(
-                Icons.menu,
-                color: Colors.white,
-              )
+              Image.asset(AssetManager.menuHorizontal),
             ],
           ),
           5.0.spaceY,
@@ -94,6 +92,7 @@ class MainInfoCage extends StatelessWidget {
           10.0.spaceY,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
                 '${cage.periode} | Umur ${cage.umur}',

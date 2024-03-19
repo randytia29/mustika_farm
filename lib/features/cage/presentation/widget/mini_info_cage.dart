@@ -9,17 +9,13 @@ class MiniInfoCage extends StatelessWidget {
   });
 
   final String? value;
-  final IconData iconData;
+  final String iconData;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(
-          iconData,
-          color: const Color(0xFF999999),
-          size: 30,
-        ),
+        Image.asset(iconData),
         8.0.spaceX,
         Column(
           children: [

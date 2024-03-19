@@ -5,6 +5,7 @@ import 'package:mustika_farm/theme_manager/space_manager.dart';
 
 import '../../../../theme_manager/asset_manager.dart';
 import 'cage_card.dart';
+import 'refresh_data.dart';
 
 class ActiveCageContent extends StatelessWidget {
   const ActiveCageContent({
@@ -20,7 +21,11 @@ class ActiveCageContent extends StatelessWidget {
         }
 
         if (activeCageState is ActiveCageFailed) {
-          return Text(activeCageState.message);
+          return RefreshData(
+            onTap: () {
+              context.read<ActiveCageCubit>().fetchActiveCage();
+            },
+          );
         }
 
         if (activeCageState is ActiveCageLoaded) {

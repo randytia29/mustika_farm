@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:mustika_farm/features/cage/domain/entities/cage.dart';
 import 'package:mustika_farm/theme_manager/space_manager.dart';
 
+import '../../../../theme_manager/asset_manager.dart';
 import 'mini_info_cage.dart';
 
 class CageCard extends StatelessWidget {
@@ -112,7 +113,7 @@ class CageCard extends StatelessWidget {
                           fontSize: 23,
                         ),
                       ),
-                      const Icon(Icons.menu)
+                      Image.asset(AssetManager.menuVertical),
                     ],
                   ),
                   Text(
@@ -132,15 +133,15 @@ class CageCard extends StatelessWidget {
                   children: [
                     MiniInfoCage(
                       value: cage.umur,
-                      iconData: Icons.calendar_month_outlined,
+                      iconData: AssetManager.calendar,
                     ),
                     MiniInfoCage(
                       value: cage.populasi,
-                      iconData: Icons.align_vertical_bottom_sharp,
+                      iconData: AssetManager.bird,
                     ),
                     MiniInfoCage(
                       value: cage.bodyWeight,
-                      iconData: Icons.branding_watermark,
+                      iconData: AssetManager.weight,
                     )
                   ],
                 ),

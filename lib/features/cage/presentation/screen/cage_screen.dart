@@ -67,7 +67,12 @@ class _CageScreenState extends State<CageScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Row(
                 children: [
-                  Expanded(child: SearchTextField(controller: _controller)),
+                  Expanded(
+                    child: SizedBox(
+                      height: 48,
+                      child: SearchTextField(controller: _controller),
+                    ),
+                  ),
                   8.0.spaceX,
                   Container(
                     width: 128,
@@ -91,9 +96,12 @@ class _CageScreenState extends State<CageScreen> {
                                       borderRadius: BorderRadius.circular(96),
                                     )
                                   : null,
-                              child: const Text(
+                              child: Text(
                                 'Aktif',
-                                style: TextStyle(fontWeight: FontWeight.w500),
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  color: index == 0 ? Colors.white : null,
+                                ),
                               ),
                             ),
                           ),
@@ -110,9 +118,12 @@ class _CageScreenState extends State<CageScreen> {
                                       borderRadius: BorderRadius.circular(96),
                                     )
                                   : null,
-                              child: const Text(
+                              child: Text(
                                 'Rehat',
-                                style: TextStyle(fontWeight: FontWeight.w500),
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  color: index == 1 ? Colors.white : null,
+                                ),
                               ),
                             ),
                           ),

@@ -5,6 +5,7 @@ import 'package:mustika_farm/theme_manager/space_manager.dart';
 
 import '../../../../theme_manager/asset_manager.dart';
 import 'cage_card.dart';
+import 'refresh_data.dart';
 
 class RestCageContent extends StatelessWidget {
   const RestCageContent({
@@ -20,7 +21,11 @@ class RestCageContent extends StatelessWidget {
         }
 
         if (restCageState is RestCageFailed) {
-          return Text(restCageState.message);
+          return RefreshData(
+            onTap: () {
+              context.read<RestCageCubit>().fetchRestCage();
+            },
+          );
         }
 
         if (restCageState is RestCageLoaded) {
@@ -64,10 +69,13 @@ class RestCageContent extends StatelessWidget {
                     itemBuilder: (BuildContext context, int index) {
                       final cage = cages[index];
 
-                      return CageCard(
-                        cage: cage,
-                        image: AssetManager.restFarm,
-                        colorHead: const Color(0xFF555555),
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: CageCard(
+                          cage: cage,
+                          image: AssetManager.restFarm,
+                          colorHead: const Color(0xFF555555),
+                        ),
                       );
                     },
                     separatorBuilder: (BuildContext context, int index) =>
