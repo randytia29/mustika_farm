@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 
 import 'package:go_router/go_router.dart';
+import 'package:mustika_farm/features/cage/domain/entities/cage.dart';
+import 'package:mustika_farm/features/cage/presentation/screen/cage_detail_screen.dart';
 import 'package:mustika_farm/features/cage/presentation/screen/cage_screen.dart';
 
 class RoutesService {
@@ -27,6 +29,14 @@ class RoutesService {
         name: 'cage',
         pageBuilder: (context, state) =>
             _buildPageWithDefaultTransition(child: const CageScreen()),
+        routes: [
+          GoRoute(
+            path: 'cage-detail',
+            name: 'cage-detail',
+            pageBuilder: (context, state) => _buildPageWithDefaultTransition(
+                child: CageDetailScreen(cage: state.extra as Cage)),
+          )
+        ],
       )
     ],
   );

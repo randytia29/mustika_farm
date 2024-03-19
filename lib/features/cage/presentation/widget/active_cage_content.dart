@@ -64,10 +64,13 @@ class ActiveCageContent extends StatelessWidget {
                     itemBuilder: (BuildContext context, int index) {
                       final cage = cages[index];
 
-                      return CageCard(
-                        cage: cage,
-                        image: AssetManager.farm,
-                        colorHead: const Color(0xFF85C226),
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: CageCard(
+                          cage: cage,
+                          image: AssetManager.farm,
+                          colorHead: const Color(0xFF85C226),
+                        ),
                       );
                     },
                     separatorBuilder: (BuildContext context, int index) =>

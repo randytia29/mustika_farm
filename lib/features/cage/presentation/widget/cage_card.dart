@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mustika_farm/features/cage/domain/entities/cage.dart';
 import 'package:mustika_farm/theme_manager/space_manager.dart';
 
@@ -19,7 +20,9 @@ class CageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (cage.statusAktif ?? false) ? () {} : null,
+      onTap: (cage.statusAktif ?? false)
+          ? () => GoRouter.of(context).goNamed('cage-detail', extra: cage)
+          : null,
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
