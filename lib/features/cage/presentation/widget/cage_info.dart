@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mustika_farm/theme_manager/space_manager.dart';
+import 'package:mustika_farm/theme_manager/value_manager.dart';
 
 import '../../../../theme_manager/color_manager.dart';
 import 'info_detail.dart';
@@ -15,6 +16,7 @@ class CageInfo extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
+        boxShadow: ValueManager.customBoxShadow(),
       ),
       child: Padding(
         padding: const EdgeInsets.only(
@@ -31,6 +33,7 @@ class CageInfo extends StatelessWidget {
               style: TextStyle(
                 color: ColorManager.primary,
                 fontWeight: FontWeight.w700,
+                fontSize: 15,
               ),
             ),
             19.0.spaceY,

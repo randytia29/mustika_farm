@@ -5,6 +5,7 @@ import 'package:mustika_farm/theme_manager/space_manager.dart';
 
 import '../../../../theme_manager/asset_manager.dart';
 import '../../../../theme_manager/color_manager.dart';
+import '../../../../theme_manager/value_manager.dart';
 import 'mini_info_cage.dart';
 
 class CageCard extends StatelessWidget {
@@ -29,6 +30,7 @@ class CageCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
+          boxShadow: ValueManager.customBoxShadow(),
         ),
         child: Padding(
           padding: const EdgeInsets.only(
@@ -54,8 +56,8 @@ class CageCard extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 62,
-                    height: 40,
+                    width: 64,
+                    height: 43,
                     margin: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
@@ -76,7 +78,7 @@ class CageCard extends StatelessWidget {
                           child: Text(
                             cage.jenisPeternak ?? '',
                             style: const TextStyle(
-                              fontSize: 10,
+                              fontSize: 11,
                               color: Colors.white,
                               fontWeight: FontWeight.w500,
                             ),
@@ -87,7 +89,7 @@ class CageCard extends StatelessWidget {
                           child: Text(
                             cage.periode ?? '',
                             style: const TextStyle(
-                              fontSize: 10,
+                              fontSize: 11,
                               color: Color(0xFF72777E),
                             ),
                           ),
@@ -111,7 +113,7 @@ class CageCard extends StatelessWidget {
                               ? ColorManager.primary
                               : null,
                           fontWeight: FontWeight.w500,
-                          fontSize: 23,
+                          fontSize: 19,
                         ),
                       ),
                       Image.asset(AssetManager.menuVertical),
@@ -121,7 +123,7 @@ class CageCard extends StatelessWidget {
                     cage.alamatKandang ?? '',
                     style: const TextStyle(
                       color: Color(0xFF555555),
-                      fontSize: 12,
+                      fontSize: 13,
                     ),
                   )
                 ],
@@ -130,7 +132,7 @@ class CageCard extends StatelessWidget {
               Visibility(
                 visible: cage.statusAktif ?? false,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     MiniInfoCage(
                       value: cage.umur,

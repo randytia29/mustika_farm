@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mustika_farm/theme_manager/space_manager.dart';
 
 import '../../../../theme_manager/color_manager.dart';
+import '../../../../theme_manager/value_manager.dart';
 import 'info_detail.dart';
 
 class PerformaInfo extends StatelessWidget {
@@ -15,6 +16,7 @@ class PerformaInfo extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
+        boxShadow: ValueManager.customBoxShadow(),
       ),
       child: Padding(
         padding: const EdgeInsets.only(
@@ -31,6 +33,7 @@ class PerformaInfo extends StatelessWidget {
               style: TextStyle(
                 color: ColorManager.primary,
                 fontWeight: FontWeight.w700,
+                fontSize: 15,
               ),
             ),
             19.0.spaceY,

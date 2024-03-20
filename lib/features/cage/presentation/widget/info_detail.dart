@@ -19,7 +19,7 @@ class InfoDetail extends StatelessWidget {
       children: [
         Text(
           title,
-          style: const TextStyle(fontSize: 12),
+          style: const TextStyle(fontSize: 13),
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -27,14 +27,14 @@ class InfoDetail extends StatelessWidget {
             Text(
               subtitle,
               style: const TextStyle(
-                fontSize: 18,
+                fontSize: 19,
                 fontWeight: FontWeight.w500,
               ),
             ),
             Text(
               unit ?? '',
               style: const TextStyle(
-                fontSize: 12,
+                fontSize: 13,
               ),
             ),
           ],

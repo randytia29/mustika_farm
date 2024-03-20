@@ -20,10 +20,13 @@ class SearchTextField extends StatelessWidget {
             fillColor: Colors.white,
             filled: true,
             hintText: 'Cari',
-            hintStyle: TextStyle(color: Color(0xFFBBBBBB), fontSize: 13),
+            hintStyle: TextStyle(
+              color: Color(0xFFBBBBBB),
+              fontSize: 14,
+            ),
             suffixIcon: Icon(
               Icons.search,
-              size: 15,
+              size: 20,
             ),
             suffixIconColor: Color(0xFFBBBBBB),
             border: OutlineInputBorder(

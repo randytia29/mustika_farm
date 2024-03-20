@@ -18,11 +18,19 @@ class MiniInfoCage extends StatelessWidget {
         Image.asset(iconData),
         8.0.spaceX,
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              newMethod(value),
+              convertValue(value),
               style: const TextStyle(
-                fontSize: 16,
+                fontSize: 17,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            Text(
+              convertUnit(value),
+              style: const TextStyle(
+                fontSize: 13,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -32,9 +40,17 @@ class MiniInfoCage extends StatelessWidget {
     );
   }
 
-  String newMethod(String? value) {
+  String convertValue(String? value) {
     if (value != null) {
-      return value.replaceAll(' ', '\n');
+      return value.split(' ')[0];
+    } else {
+      return '';
+    }
+  }
+
+  String convertUnit(String? value) {
+    if (value != null) {
+      return value.split(' ')[1];
     } else {
       return '';
     }

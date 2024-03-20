@@ -55,87 +55,101 @@ class _CageScreenState extends State<CageScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            20.0.spaceY,
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: Text(
-                'Kandang',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
-              ),
-            ),
-            10.0.spaceY,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Row(
+            Container(
+              padding: const EdgeInsets.only(top: 20, bottom: 23),
+              color: Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Expanded(
-                    child: SizedBox(
-                      height: 48,
-                      child: SearchTextField(controller: _controller),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: Text(
+                      'Kandang',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
-                  8.0.spaceX,
-                  Container(
-                    width: 128,
-                    height: 35,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: ColorManager.primary),
-                      borderRadius: BorderRadius.circular(96),
-                    ),
+                  10.0.spaceY,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Row(
                       children: [
                         Expanded(
-                          child: InkWell(
-                            onTap: () => setState(() => index = 0),
-                            child: Container(
-                              height: 35,
-                              alignment: Alignment.center,
-                              decoration: index == 0
-                                  ? BoxDecoration(
-                                      color: ColorManager.primary,
-                                      borderRadius: BorderRadius.circular(96),
-                                    )
-                                  : null,
-                              child: Text(
-                                'Aktif',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  color: index == 0 ? Colors.white : null,
-                                ),
-                              ),
-                            ),
+                          child: SizedBox(
+                            height: 48,
+                            child: SearchTextField(controller: _controller),
                           ),
                         ),
-                        Expanded(
-                          child: InkWell(
-                            onTap: () => setState(() => index = 1),
-                            child: Container(
-                              height: 35,
-                              alignment: Alignment.center,
-                              decoration: index == 1
-                                  ? BoxDecoration(
-                                      color: ColorManager.primary,
-                                      borderRadius: BorderRadius.circular(96),
-                                    )
-                                  : null,
-                              child: Text(
-                                'Rehat',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  color: index == 1 ? Colors.white : null,
+                        8.0.spaceX,
+                        Container(
+                          width: 128,
+                          height: 35,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: ColorManager.primary),
+                            borderRadius: BorderRadius.circular(96),
+                          ),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: InkWell(
+                                  onTap: () => setState(() => index = 0),
+                                  child: Container(
+                                    height: 35,
+                                    alignment: Alignment.center,
+                                    decoration: index == 0
+                                        ? BoxDecoration(
+                                            color: ColorManager.primary,
+                                            borderRadius:
+                                                BorderRadius.circular(96),
+                                          )
+                                        : null,
+                                    child: Text(
+                                      'Aktif',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        color: index == 0 ? Colors.white : null,
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
+                              Expanded(
+                                child: InkWell(
+                                  onTap: () => setState(() => index = 1),
+                                  child: Container(
+                                    height: 35,
+                                    alignment: Alignment.center,
+                                    decoration: index == 1
+                                        ? BoxDecoration(
+                                            color: ColorManager.primary,
+                                            borderRadius:
+                                                BorderRadius.circular(96),
+                                          )
+                                        : null,
+                                    child: Text(
+                                      'Rehat',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        color: index == 1 ? Colors.white : null,
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
                         )
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
-            23.0.spaceY,
             index == 0 ? const ActiveCageContent() : const RestCageContent(),
           ],
         ),
