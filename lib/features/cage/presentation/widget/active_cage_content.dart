@@ -61,7 +61,6 @@ class ActiveCageContent extends StatelessWidget {
                     ],
                   ),
                 ),
-                12.0.spaceY,
                 Expanded(
                   child: ListView.separated(
                     shrinkWrap: true,
@@ -70,7 +69,11 @@ class ActiveCageContent extends StatelessWidget {
                       final cage = cages[index];
 
                       return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        padding: EdgeInsets.only(
+                          left: 15,
+                          right: 15,
+                          top: index == 0 ? 12 : 0,
+                        ),
                         child: CageCard(
                           cage: cage,
                           image: AssetManager.farm,
