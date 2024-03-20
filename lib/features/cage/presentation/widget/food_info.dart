@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mustika_farm/theme_manager/space_manager.dart';
 
+import '../../../../theme_manager/color_manager.dart';
 import 'info_detail.dart';
 
 class FoodInfo extends StatelessWidget {
@@ -25,10 +26,10 @@ class FoodInfo extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
+            Text(
               'Pakan',
               style: TextStyle(
-                color: Color(0xFF1B6858),
+                color: ColorManager.primary,
                 fontWeight: FontWeight.w700,
               ),
             ),

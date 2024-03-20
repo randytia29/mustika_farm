@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:mustika_farm/theme_manager/asset_manager.dart';
 import 'package:mustika_farm/theme_manager/space_manager.dart';
 
+import '../../../../theme_manager/color_manager.dart';
 import '../../domain/entities/cage.dart';
 
 class MainInfoCage extends StatelessWidget {
@@ -18,13 +19,13 @@ class MainInfoCage extends StatelessWidget {
     return Container(
       height: 160,
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Color(0xFF85C226), Color(0xFF1B6858)],
+          colors: [const Color(0xFF85C226), ColorManager.primary],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(10),
           bottomRight: Radius.circular(10),
         ),

@@ -4,6 +4,7 @@ import 'package:mustika_farm/features/cage/domain/entities/cage.dart';
 import 'package:mustika_farm/theme_manager/space_manager.dart';
 
 import '../../../../theme_manager/asset_manager.dart';
+import '../../../../theme_manager/color_manager.dart';
 import 'mini_info_cage.dart';
 
 class CageCard extends StatelessWidget {
@@ -68,7 +69,7 @@ class CageCard extends StatelessWidget {
                           margin: const EdgeInsets.all(2),
                           decoration: BoxDecoration(
                             color: cage.jenisPeternak == 'PLASMA'
-                                ? const Color(0xFF1B6858)
+                                ? ColorManager.primary
                                 : colorHead,
                             borderRadius: BorderRadius.circular(24),
                           ),
@@ -107,7 +108,7 @@ class CageCard extends StatelessWidget {
                         cage.namaKandang ?? '',
                         style: TextStyle(
                           color: (cage.statusAktif ?? false)
-                              ? const Color(0xFF1B6858)
+                              ? ColorManager.primary
                               : null,
                           fontWeight: FontWeight.w500,
                           fontSize: 23,

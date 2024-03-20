@@ -4,6 +4,7 @@ import 'package:mustika_farm/features/cage/presentation/cubit/active_cage_cubit.
 import 'package:mustika_farm/features/cage/presentation/cubit/rest_cage_cubit.dart';
 import 'package:mustika_farm/features/cage/presentation/widget/rest_cage_content.dart';
 import 'package:mustika_farm/features/cage/presentation/widget/search_text_field.dart';
+import 'package:mustika_farm/theme_manager/color_manager.dart';
 import 'package:mustika_farm/theme_manager/space_manager.dart';
 
 import '../widget/active_cage_content.dart';
@@ -42,7 +43,7 @@ class _CageScreenState extends State<CageScreen> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         shape: const CircleBorder(),
-        backgroundColor: const Color(0xFF1B6858),
+        backgroundColor: ColorManager.primary,
         onPressed: () {},
         child: const Icon(
           Icons.add,
@@ -79,7 +80,7 @@ class _CageScreenState extends State<CageScreen> {
                     height: 35,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border.all(),
+                      border: Border.all(color: ColorManager.primary),
                       borderRadius: BorderRadius.circular(96),
                     ),
                     child: Row(
@@ -92,7 +93,7 @@ class _CageScreenState extends State<CageScreen> {
                               alignment: Alignment.center,
                               decoration: index == 0
                                   ? BoxDecoration(
-                                      color: const Color(0xFF1B6858),
+                                      color: ColorManager.primary,
                                       borderRadius: BorderRadius.circular(96),
                                     )
                                   : null,
@@ -114,7 +115,7 @@ class _CageScreenState extends State<CageScreen> {
                               alignment: Alignment.center,
                               decoration: index == 1
                                   ? BoxDecoration(
-                                      color: const Color(0xFF1B6858),
+                                      color: ColorManager.primary,
                                       borderRadius: BorderRadius.circular(96),
                                     )
                                   : null,
