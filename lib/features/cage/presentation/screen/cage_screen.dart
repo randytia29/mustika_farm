@@ -45,6 +45,7 @@ class _CageScreenState extends State<CageScreen> {
         shape: const CircleBorder(),
         backgroundColor: ColorManager.primary,
         onPressed: () {},
+        mini: true,
         child: const Icon(
           Icons.add,
           color: Colors.white,
@@ -56,7 +57,7 @@ class _CageScreenState extends State<CageScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              padding: const EdgeInsets.only(top: 20, bottom: 23),
+              padding: const EdgeInsets.only(top: 20, bottom: 20),
               color: Colors.white,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -75,6 +76,7 @@ class _CageScreenState extends State<CageScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
                           child: SizedBox(
